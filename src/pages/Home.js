@@ -53,7 +53,15 @@ const Home = () => {
         backgroundImage: `url(${backgroundImageUrl})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-      }}>
+      }}
+    >
+      <div>
+        <div>
+          <div>
+            <h1>Book Reviewer Hub</h1>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
