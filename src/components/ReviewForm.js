@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "./Footer";
 
 function ReviewForm() {
@@ -10,6 +10,19 @@ function ReviewForm() {
   const [successMessage, setSuccessMessage] = useState("");
   const [reviews, setReviews] = useState([]);
 
+  useEffect(() => {
+    const storedReviews = JSON.parse(localStorage.getItem("reviews"));
+    if (storedReviews) {
+      setReviews(storedReviews);
+    }
+
+    fetchReviews();
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("reviews", JSON.stringify(reviews));
+  }, [reviews]);
+
   function fetchReviews() {
     fetch("https://books-api-iy0g.onrender.com/reviews")
       .then((response) => response.json())
@@ -17,9 +30,6 @@ function ReviewForm() {
         setReviews(data);
       })
       .catch((error) => console.error("Error fetching reviews:", error));
-
-      fetchReviews();
-      []);
   }
 
   function handleSubmit(e) {
