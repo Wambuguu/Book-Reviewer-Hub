@@ -59,17 +59,17 @@ const BookList = () => {
                 <h3 className="text-lg font-semibold">{book.bookTitle}</h3>
               </div>
               {selectedBook === book && (
-                <div>
+                <div className="book-card p-4 shadow-md rounded-lg overflow-hidden border rounded">
                   <p>
-                    <span>Description:</span>
+                    <span className="font-bold">Description:</span>{" "}
                     {book.bookDescription}
                   </p>
                   <p>
-                    <span>Author:</span>
+                    <span className="font-bold">Author:</span>{" "}
                     {book.bookAuthor}
                   </p>
                   <p>
-                    <span>Publisher:</span>
+                    <span className="font-bold">Publisher:</span>{" "}
                     {book.bookPublisher}
                   </p>
                   <a
@@ -81,10 +81,10 @@ const BookList = () => {
                     Amazon Link
                   </a>
                   <p>
-                    <span>ISBN:</span> {book.bookIsbn}
+                    <span className="font-bold">ISBN:</span> {book.bookIsbn}
                   </p>
                   <p>
-                    <span>Rank:</span> {book.bookRank}
+                    <span className="font-bold">Rank:</span> {book.bookRank}
                   </p>
                 </div>
               )}
