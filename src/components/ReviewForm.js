@@ -85,105 +85,112 @@ function ReviewForm() {
       });
   }
   return (
-    <div>
-      <div className="bg-gray-100 p-6 rounded-md shadow-md mb-8">
-        <h2 className="text-xl font-semibold mb-2 text-center">
-          Write a Review
-        </h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          {errorMessage && <div className="text-red-600">{errorMessage}</div>}
-          {successMessage && (
-            <div className="text-green-600">{successMessage}</div>
-          )}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input
-              value={bookTitle}
-              onChange={(e) => setBookTitle(e.target.value)}
-              type="text"
-              name="title"
-              placeholder="Title"
-              required
-              className="input w-full p-2"
-            />
-            <input
-              value={bookAuthor}
-              onChange={(e) => setBookAuthor(e.target.value)}
-              type="text"
-              name="author"
-              placeholder="Author"
-              required
-              className="input w-full p-2"
-            />
-            <input
-              value={bookReview}
-              onChange={(e) => setBookReview(e.target.value)}
-              type="text"
-              name="review"
-              placeholder="Review"
-              required
-              className="input w-full p-2"
-            />
-            <input
-              value={bookRating}
-              onChange={(e) => setBookRating(e.target.value)}
-              type="number"
-              name="rating"
-              placeholder="Rating"
-              min="1"
-              max="5"
-              required
-              className="input w-full p-2"
-            />
-          </div>
-          <button
-            className="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-auto block transition duration-300 ease-in-out"
-            type="submit"
-          >
-            Submit Review
-          </button>
-        </form>
-      </div>
-      <div className="bg-gray-100 p-6 rounded-md shadow-md">
-        <h2 className="text-xl font-semibold mb-2 text-center">
-          Submitted Reviews
-        </h2>
-        <table className="w-full border-collapse border border-gray-400">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Review</th>
-              <th>Rating</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {reviews.map((review, index) => (
-              <tr key={index}>
-                <td>
-                  {review.bookTitle}
-                </td>
-                <td>
-                  {review.bookAuthor}
-                </td>
-                <td>
-                  {review.bookReview}
-                </td>
-                <td>
-                  {review.bookRating}
-                </td>
-                <td>
-                  <button
-                    onClick={() => handleDelete(review.id)}
-                  >
-                    X
-                  </button>
-                </td>
+      <div>
+        <div className="bg-gray-100 p-6 rounded-md shadow-md mb-8">
+          <h2 className="text-xl font-semibold mb-2 text-center">
+            Write a Review
+          </h2>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            {errorMessage && <div className="text-red-600">{errorMessage}</div>}
+            {successMessage && (
+              <div className="text-green-600">{successMessage}</div>
+            )}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input
+                value={bookTitle}
+                onChange={(e) => setBookTitle(e.target.value)}
+                type="text"
+                name="title"
+                placeholder="Title"
+                required
+                className="input w-full p-2"
+              />
+              <input
+                value={bookAuthor}
+                onChange={(e) => setBookAuthor(e.target.value)}
+                type="text"
+                name="author"
+                placeholder="Author"
+                required
+                className="input w-full p-2"
+              />
+              <input
+                value={bookReview}
+                onChange={(e) => setBookReview(e.target.value)}
+                type="text"
+                name="review"
+                placeholder="Review"
+                required
+                className="input w-full p-2"
+              />
+              <input
+                value={bookRating}
+                onChange={(e) => setBookRating(e.target.value)}
+                type="number"
+                name="rating"
+                placeholder="Rating"
+                min="1"
+                max="5"
+                required
+                className="input w-full p-2"
+              />
+            </div>
+            <button
+              className="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-auto block transition duration-300 ease-in-out"
+              type="submit"
+            >
+              Submit Review
+            </button>
+          </form>
+        </div>
+        <div className="bg-gray-100 p-6 rounded-md shadow-md">
+          <h2 className="text-xl font-semibold mb-2 text-center">
+            Submitted Reviews
+          </h2>
+          <table className="w-full border-collapse border border-gray-400">
+            <thead>
+              <tr className="bg-gray-200">
+                <th className="border border-gray-400 px-4 py-2">Title</th>
+                <th className="border border-gray-400 px-4 py-2">Author</th>
+                <th className="border border-gray-400 px-4 py-2">Review</th>
+                <th className="border border-gray-400 px-4 py-2">Rating</th>
+                <th className="border-b border-gray-400 px-4 py-2"></th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {reviews.map((review, index) => (
+                <tr
+                  key={index}
+                  className={index % 2 === 0 ? "bg-gray-100" : ""}
+                >
+                  <td className="border border-gray-400 px-4 py-2 text-center">
+                    {review.bookTitle}
+                  </td>
+                  <td className="border border-gray-400 px-4 py-2 text-center">
+                    {review.bookAuthor}
+                  </td>
+                  <td className="border border-gray-400 px-4 py-2 text-center">
+                    {review.bookReview}
+                  </td>
+                  <td className="border border-gray-400 px-4 py-2 text-center">
+                    {review.bookRating}
+                  </td>
+                  <td className="border border-gray-400 px-4 py-2 text-center">
+                    <button
+                      onClick={() => handleDelete(review.id)}
+                      className="text-red-600 font-bold"
+                    >
+                      {" "}
+                      X{" "}
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
   );
 }
+
+export default ReviewForm;
