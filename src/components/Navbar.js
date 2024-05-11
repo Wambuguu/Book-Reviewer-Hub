@@ -4,8 +4,8 @@ import logo from "../logo.svg";
 
 const Navbar = () => {
   return (
-    <div>
-      <div>
+    <div className="bg-black bg-opacity-30">
+      <div className="flex justify-between container p-4 items-center">
         <div>
           <img src={logo} alt="logo" width={70} height={70} />
         </div>
