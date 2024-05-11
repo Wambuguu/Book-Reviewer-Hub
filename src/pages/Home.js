@@ -61,6 +61,13 @@ const Home = () => {
             <h1>Book Reviewer Hub</h1>
           </div>
         </div>
+
+        <div>
+          <div>
+            <h2>{points[currentPointIndex].title}</h2>
+            <p>{points[currentPointIndex].description}</p>
+          </div>
+        </div>
       </div>
     </div>
   );
