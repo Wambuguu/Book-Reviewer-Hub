@@ -35,6 +35,31 @@ const BookList = () => {
         onChange={(e) => setSearchTerm(e.target.value)}
         className="border border-gray-300 rounded-md p-2 w-full mb-4"
       />
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {books
+          .filter((book) =>
+            book.bookTitle.toLowerCase().includes(searchTerm.toLowerCase())
+          )
+          .map((book, index) => (
+            <div
+              key={index}
+              className={`bg-white shadow-md rounded-md cursor-pointer transition-colors duration-300 ${
+                selectedBook === book
+                  ? "border-2 border-blue-500"
+                  : "border border-gray-200"
+              }`}
+              onClick={() => handleCardClick(book)}
+            >
+              <div className="p-4">
+                <img
+                  src={book.bookImage}
+                  alt={book.bookTitle}
+                  className="w-full h-auto mb-2"
+                />
+                <h3 className="text-lg font-semibold">{book.bookTitle}</h3>
+              </div>
+        }  
+        <div/> 
     </div>
   );
 };
