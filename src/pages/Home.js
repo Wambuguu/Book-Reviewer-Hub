@@ -55,21 +55,22 @@ const Home = () => {
         backgroundPosition: "center",
       }}
     >
-      <div>
-        <div>
-          <div>
-            <h1>Book Reviewer Hub</h1>
+      <div className="flex-grow flex flex-col justify-between">
+        <div className="py-8 text-white text-center">
+          <div className="max-w-lg mx-auto p-4 bg-black bg-opacity-70 rounded-lg">
+            <h1 className="text-4xl font-bold">Book Reviewer Hub</h1>
+          </div>
+        </div>
+        <div className="flex-grow flex flex-col justify-center items-center">
+          <div className="max-w-lg p-8 bg-black bg-opacity-70 text-white rounded-lg shadow-lg">
+            <h2 className="text-2xl mb-4">{points[currentPointIndex].title}</h2>
+            <p className="text-lg leading-relaxed">
+              {points[currentPointIndex].description}
+            </p>
           </div>
         </div>
 
-        <div>
-          <div>
-            <h2>{points[currentPointIndex].title}</h2>
-            <p>{points[currentPointIndex].description}</p>
-          </div>
-        </div>
-
-        <div>
+        <div className="pb-8 flex justify-center">
           <button
             className="bg-white text-gray-900 rounded-full px-4 py-2 mr-4 focus:outline-none"
             onClick={handlePrevPoint}
