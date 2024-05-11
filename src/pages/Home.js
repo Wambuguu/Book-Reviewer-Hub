@@ -45,4 +45,15 @@ const Home = () => {
       prevIndex === 0 ? points.length - 1 : prevIndex - 1
     );
   };
+
+  return (
+    <div
+      className="min-h-screen flex flex-col"
+      style={{
+        backgroundImage: `url(${backgroundImageUrl})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}>
+    </div>
+  );
 };
