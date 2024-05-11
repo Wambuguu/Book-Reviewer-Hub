@@ -64,4 +64,24 @@ function ReviewForm() {
         setSuccessMessage("");
       });
   }
+
+  function handleDelete(id) {
+    fetch(`https://books-api-iy0g.onrender.com/reviews/${id}`, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to delete review.");
+        }
+        const updatedReviews = reviews.filter((review) => review.id !== id);
+        setReviews(updatedReviews);
+        setSuccessMessage("Review deleted successfully.");
+        setErrorMessage("");
+      })
+      .catch((error) => {
+        console.error("Error deleting review:", error);
+        setErrorMessage("Failed to delete review. Please try again.");
+        setSuccessMessage("");
+      });
+  }
 }
