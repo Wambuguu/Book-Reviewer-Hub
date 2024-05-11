@@ -58,8 +58,41 @@ const BookList = () => {
                 />
                 <h3 className="text-lg font-semibold">{book.bookTitle}</h3>
               </div>
-        }  
-        <div/> 
+              {selectedBook === book && (
+                <div>
+                  <p>
+                    <span>Description:</span>
+                    {book.bookDescription}
+                  </p>
+                  <p>
+                    <span>Author:</span>
+                    {book.bookAuthor}
+                  </p>
+                  <p>
+                    <span>Publisher:</span>
+                    {book.bookPublisher}
+                  </p>
+                  <a
+                    href={book.amazonBookUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline"
+                  >
+                    Amazon Link
+                  </a>
+                  <p>
+                    <span>ISBN:</span> {book.bookIsbn}
+                  </p>
+                  <p>
+                    <span>Rank:</span> {book.bookRank}
+                  </p>
+                </div>
+              )}
+              </div>
+          ))}
+      </div>
     </div>
   );
 };
+
+export default BookList;
