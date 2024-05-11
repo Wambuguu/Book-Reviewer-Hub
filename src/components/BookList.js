@@ -20,4 +20,8 @@ const BookList = () => {
 
     fetchBooks();
   }, []);
+
+  const handleCardClick = (book) => {
+    setSelectedBook(selectedBook === book ? null : book);
+  };
 };
