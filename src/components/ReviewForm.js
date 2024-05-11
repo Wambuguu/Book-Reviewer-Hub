@@ -84,4 +84,65 @@ function ReviewForm() {
         setSuccessMessage("");
       });
   }
+  return (
+      <div>
+        <div className="bg-gray-100 p-6 rounded-md shadow-md mb-8">
+          <h2 className="text-xl font-semibold mb-2 text-center">
+            Write a Review
+          </h2>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            {errorMessage && <div className="text-red-600">{errorMessage}</div>}
+            {successMessage && (
+              <div className="text-green-600">{successMessage}</div>
+            )}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input
+                value={bookTitle}
+                onChange={(e) => setBookTitle(e.target.value)}
+                type="text"
+                name="title"
+                placeholder="Title"
+                required
+                className="input w-full p-2"
+              />
+              <input
+                value={bookAuthor}
+                onChange={(e) => setBookAuthor(e.target.value)}
+                type="text"
+                name="author"
+                placeholder="Author"
+                required
+                className="input w-full p-2"
+              />
+              <input
+                value={bookReview}
+                onChange={(e) => setBookReview(e.target.value)}
+                type="text"
+                name="review"
+                placeholder="Review"
+                required
+                className="input w-full p-2"
+              />
+              <input
+                value={bookRating}
+                onChange={(e) => setBookRating(e.target.value)}
+                type="number"
+                name="rating"
+                placeholder="Rating"
+                min="1"
+                max="5"
+                required
+                className="input w-full p-2"
+              />
+            </div>
+            <button
+              className="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-auto block transition duration-300 ease-in-out"
+              type="submit"
+            >
+              Submit Review
+            </button>
+          </form>
+        </div>
+      </div>
+  );
 }
