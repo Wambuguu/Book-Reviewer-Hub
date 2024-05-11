@@ -37,7 +37,7 @@ Book Reviewer Hub is a comprehensive platform designed for book enthusiasts to d
 
 3. API Integration: Axios
 
-4. Backend: API for fetching book data and reviews deployed on Render)
+4. Backend: API for fetching book data and reviews deployed on Render
 
 5. Deployment: Hosted on Vercel
 
