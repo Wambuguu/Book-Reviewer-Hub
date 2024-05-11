@@ -20,6 +20,29 @@ const About = () => {
             About Us
           </h1>
         </div>
+        <div className="max-w-3xl p-6 bg-black bg-opacity-70 text-white rounded-lg shadow-lg">
+          <p className="text-lg font-semibold leading-relaxed">
+            Book Reviewer Hub is a comprehensive platform designed for book
+            enthusiasts to discover and review their favorite reads with the use
+            of a user-friendly interface and robust search functionalities.
+          </p>
+          <p className="mt-4 text-lg leading-relaxed">
+            At BookReviewerHub, we're passionate about books and the
+            transformative power of literature. Our platform was born out of a
+            love for reading and a desire to create a vibrant community where
+            book enthusiasts can come together to discover, discuss, and
+            celebrate the written word.
+          </p>
+          <p className="mt-4 text-lg leading-relaxed">
+            <span className="font-semibold">Our Mission:</span> Our mission is
+            simple: to connect readers, authors, and reviewers in a dynamic
+            online hub where they can explore, share, and engage with books in
+            meaningful ways. We believe that books have the power to educate,
+            inspire, and unite people from all walks of life, and we're
+            committed to fostering a welcoming space where this magic can
+            thrive.
+          </p>
+        </div>
       </div>
     </div>
   );
