@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const backgroundImageUrl =
@@ -85,6 +86,7 @@ const Home = () => {
           </button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

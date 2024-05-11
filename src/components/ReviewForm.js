@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import Footer from "./Footer";
 
 function ReviewForm() {
   const [bookTitle, setBookTitle] = useState("");
@@ -16,6 +17,9 @@ function ReviewForm() {
         setReviews(data);
       })
       .catch((error) => console.error("Error fetching reviews:", error));
+
+      fetchReviews();
+      []);
   }
 
   function handleSubmit(e) {
@@ -85,6 +89,7 @@ function ReviewForm() {
       });
   }
   return (
+    <>
       <div>
         <div className="bg-gray-100 p-6 rounded-md shadow-md mb-8">
           <h2 className="text-xl font-semibold mb-2 text-center">
@@ -190,6 +195,8 @@ function ReviewForm() {
           </table>
         </div>
       </div>
+      <Footer />
+    </>
   );
 }
 

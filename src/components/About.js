@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 
 const About = () => {
   const backgroundImageUrl =
@@ -44,6 +45,7 @@ const About = () => {
           </p>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
