@@ -14,9 +14,9 @@ const About = () => {
         height: "100%",
       }}
     >
-      <div>
-        <div>
-          <h1>
+      <div className="flex flex-col justify-center items-center">
+        <div className="py-8">
+          <h1 className="text-4xl font-bold mb-8 text-center text-white max-w-lg mx-auto p-4 bg-black bg-opacity-70 rounded-lg">
             About Us
           </h1>
         </div>
