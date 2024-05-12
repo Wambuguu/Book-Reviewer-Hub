@@ -31,15 +31,18 @@ Book Reviewer Hub is a comprehensive platform designed for book enthusiasts to d
 
 ## Technologies Used:
 
-1. Frontend: React.js
+1. React.js: Frontend.
 
-2. Styling: Tailwind CSS
+2. Tailwind CSS: Styling.
 
-3. API Integration: Axios
+3. Axios: API Integration.
 
-4. Backend: API for fetching book data and reviews deployed on Render
+4. Render: Backend deployment of API for fetching book data and reviews.
 
-5. Deployment: Hosted on Vercel
+5. Git.
+
+6. Vercel: Frontend deployment.
+
 
 ## Setup Instructions:
 
