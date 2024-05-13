@@ -73,7 +73,7 @@ Book Reviewer Hub is a comprehensive platform designed for book enthusiasts to d
    ```
 
 ## Author:
-([Lewis Mwangi Wambugu](https://github.com/Wambuguu))
+- [Lewis Mwangi Wambugu](https://github.com/Wambuguu)
 
 
 ## Contributing:
